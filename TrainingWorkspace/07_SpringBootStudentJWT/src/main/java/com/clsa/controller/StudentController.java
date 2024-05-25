@@ -64,7 +64,7 @@ public class StudentController {
 		Student student = service.findStudentById(studentId);
 		if(student != null) {
 			StudentDTO dto = new StudentDTO(student.getStudentId(), student.getStudentName(), student.getScore(), student.getAddress().getCity(), student.getAddress().getState(), student.getAddress().getPin());
-			response = new ResponseEntity<StudentDTO>(HttpStatus.OK);
+			response = new ResponseEntity<StudentDTO>(dto, HttpStatus.OK);
 		}
 		else {
 			response = new ResponseEntity<StudentDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
