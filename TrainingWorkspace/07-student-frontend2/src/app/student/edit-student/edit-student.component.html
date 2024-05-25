@@ -1,0 +1,63 @@
+<div class="alert alert-primary">
+    <h3>Update Student Form</h3>
+</div>
+<form [formGroup]="studentForm" (ngSubmit)="updateStudent()">
+    <div class="form-group">
+        <div *ngIf="studentForm.controls.studentId.errors && 
+        (studentForm.controls.studentId.touched || studentForm.controls.studentId.dirty)">
+            Student Id is required
+        </div>
+        <label for="studentId">Student Id</label>
+        <input class="form-control" type="text" name="studentId" id="studentId" formControlName="studentId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="studentForm.controls.studentName.errors && 
+                (studentForm.controls.studentName.touched || studentForm.controls.studentName.dirty)">
+            Student Name is required
+        </div>
+        <label for="studentName">Student Name</label>
+        <input class="form-control" type="text" name="studentName" id="studentName" formControlName="studentName">
+    </div>
+    <div class="form-group">
+        <div *ngIf="studentForm.controls.score.errors && 
+        (studentForm.controls.score.touched || studentForm.controls.score.dirty)">
+            Student Score is required
+        </div>
+
+        <label for="score">Student Score</label>
+        <input class="form-control" type="text" name="score" id="score" formControlName="score">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="studentForm.controls.city.errors && 
+        (studentForm.controls.city.touched || studentForm.controls.city.dirty)">
+            Student City is required
+        </div>
+
+        <label for="city">Student City</label>
+        <input class="form-control" type="text" name="city" id="city" formControlName="city">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="studentForm.controls.state.errors && 
+        (studentForm.controls.state.touched || studentForm.controls.state.dirty)">
+            Student State is required
+        </div>
+
+        <label for="state">Student State</label>
+        <input class="form-control" type="text" name="state" id="state" formControlName="state">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="studentForm.controls.pin.errors && 
+        (studentForm.controls.pin.touched || studentForm.controls.pin.dirty)">
+            Student Pincode is required
+        </div>
+
+        <label for="pin">Student Pincode</label>
+        <input class="form-control" type="text" name="pin" id="pin" formControlName="pin">
+    </div>
+
+
+    <input type="submit" value="Update Student" class="btn btn-primary" [disabled]="studentForm.invalid">
+</form>
