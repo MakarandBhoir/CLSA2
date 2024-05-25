@@ -3,6 +3,7 @@ package com.clsa.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,7 @@ import com.clsa.exceptions.DuplicateStudentException;
 import com.clsa.exceptions.StudentNotFoundException;
 
 @Repository
+@Profile("dev")
 public class StudentDaoH2Impl implements StudentDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
